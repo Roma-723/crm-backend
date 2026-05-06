@@ -9,7 +9,10 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
         origin: process.env.NODE_ENV === 'production'
-            ? ['https://yourdomain.com']
+            ? [
+                'https://crm-rosy-one.vercel.app',
+                'https://yourdomain.com',
+            ]
             : ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000', 'http://127.0.0.1:3000'],
         credentials: true,
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
