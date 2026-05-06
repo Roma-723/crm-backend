@@ -2,6 +2,10 @@
   "name": "crm-backend",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  },
   "scripts": {
     "build": "nest build",
     "start": "nest start",
@@ -11,7 +15,7 @@
     "prisma:migrate": "prisma migrate dev --name init",
     "prisma:studio": "prisma studio",
     "prisma:push": "prisma db push",
-    "postinstall": "chmod +x node_modules/.bin/* 2>/dev/null || true"
+    "postinstall": "npm run prisma:generate && chmod +x node_modules/.bin/* 2>/dev/null || true"
   },
   "dependencies": {
     "@nestjs/common": "^10.3.0",
